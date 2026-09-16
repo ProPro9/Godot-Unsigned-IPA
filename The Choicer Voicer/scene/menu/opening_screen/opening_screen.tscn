@@ -1,0 +1,176 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjfnl7w8yjijg"]
+
+[ext_resource type="FontFile" uid="uid://cntue2fs2dixc" path="res://graphic/font/DuruSans-Regular.ttf" id="1_cvq1y"]
+[ext_resource type="Script" uid="uid://wflad1165exv" path="res://scene/menu/opening_screen/opening_screen.gd" id="1_kw8sj"]
+[ext_resource type="Texture2D" uid="uid://8e84f66wnclo" path="res://graphic/image/tcv_advisory.png" id="2_q77r3"]
+[ext_resource type="Texture2D" uid="uid://dsvuhjcg6ppkf" path="res://graphic/image/tcv_advisory2.png" id="3_fg3ub"]
+
+[sub_resource type="Animation" id="Animation_esjv2"]
+resource_name = "Fadein"
+length = 0.4
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3996, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_47y6f"]
+resource_name = "Fadeout"
+length = 0.6
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3996, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ee6o5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5pph"]
+_data = {
+&"Fadein": SubResource("Animation_esjv2"),
+&"Fadeout": SubResource("Animation_47y6f"),
+&"RESET": SubResource("Animation_ee6o5")
+}
+
+[node name="OpeningScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kw8sj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.95158, 0.95158, 0.95158, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 514.0
+offset_right = 1090.0
+offset_bottom = 622.0
+theme_override_colors/font_color = Color(0, 0.766667, 1, 1)
+theme_override_colors/font_shadow_color = Color(2.88785e-06, 0.465648, 0.611907, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("1_cvq1y")
+theme_override_font_sizes/font_size = 24
+text = "This version 0.5 is a playable alpha with many unsolved issues.
+One individual is currently responsible for all coding.
+I apologize for the bugs and crashes, and appreciate your continued patience."
+
+[node name="TcvAdvisory" type="Sprite2D" parent="."]
+position = Vector2(849, 188)
+texture = ExtResource("2_q77r3")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 699.0
+offset_top = 280.0
+offset_right = 1687.0
+offset_bottom = 388.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.490196)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("1_cvq1y")
+theme_override_font_sizes/font_size = 24
+text = "Do not shoot anger lasers
+at the developer."
+
+[node name="TcvAdvisory2" type="Sprite2D" parent="."]
+position = Vector2(333, 324)
+scale = Vector2(1.59279, 1.59279)
+texture = ExtResource("3_fg3ub")
+
+[node name="Blackout" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Blackout"]
+libraries = {
+&"": SubResource("AnimationLibrary_n5pph")
+}
+autoplay = "Fadein"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.9
+one_shot = true
+autostart = true

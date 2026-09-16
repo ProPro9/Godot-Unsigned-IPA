@@ -1,0 +1,33 @@
+GDRE Tools v2.6.4
+Windows 10.0.26200, AMD Radeon RX 5700 XT, vulkan
+Opening file: C:/Users/Bowen/Desktop/TheChoicerVoicer_0-5-2 standard.exe
+Loaded 393 imported files
+Detected Engine Version: 4.4.1
+Detected Bytecode Revision: 4.3.0-stable (77af6ca)
+Verified 961 files, no errors detected!
+Extracted 961 files, no errors detected!
+Saved project config.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     223
+Scripts not decompiled:                 0
+Imported resources for export session:  393
+Successfully converted:                 393
+Lossy:                                  23
+Rewrote metadata:                       170
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.4.1 to edit the project.
+
+*******************************************************************************
+
