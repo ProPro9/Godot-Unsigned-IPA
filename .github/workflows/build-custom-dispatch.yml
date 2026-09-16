@@ -5,7 +5,7 @@ on:
         description: "The version of Godot downloaded."
         required: false
         type: string
-        default: "4.7.1"
+        default: "4.7.2"
       godot-flavor: 
         description: "The flavor of Godot downloaded."
         required: false
